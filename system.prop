@@ -26,11 +26,6 @@ ro.sf.lcd_density=240
 persist.sys.use_dithering=0
 persist.sys.use_16bpp_alpha=1
 
-# FM Radio
-# ro.fm.analogpath.supported=false
-# ro.fm.transmitter=false
-# ro.fm.mulinst.recording.support=false
-
 # Bluetooth
 ro.bluetooth.remote.autoconnect=true
 ro.bluetooth.request.master=true
