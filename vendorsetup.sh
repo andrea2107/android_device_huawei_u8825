@@ -14,8 +14,5 @@
 # limitations under the License.
 #
 
-
-add_lunch_combo carbon_u8825-userdebug
-
 # Run device patches on the tree.
  sh device/huawei/u8825/patches/apply.sh
