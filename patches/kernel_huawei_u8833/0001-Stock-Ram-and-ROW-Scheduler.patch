@@ -1,0 +1,43 @@
+From ecaa6d41b6c8386f27cdc0d3af6c81d3389dcbe6 Mon Sep 17 00:00:00 2001
+From: luca020400 <luca.stefani.ge1@gmail.com>
+Date: Tue, 30 Sep 2014 13:59:28 +0200
+Subject: [PATCH] Stock Ram and ROW Scheduler
+
+---
+ arch/arm/configs/u8833_defconfig | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/arch/arm/configs/u8833_defconfig b/arch/arm/configs/u8833_defconfig
+index 351c1ec..0a8f8ac 100644
+--- a/arch/arm/configs/u8833_defconfig
++++ b/arch/arm/configs/u8833_defconfig
+@@ -234,10 +234,10 @@ CONFIG_IOSCHED_VR=y
+ CONFIG_IOSCHED_ZEN=y
+ # CONFIG_DEFAULT_BFQ is not set
+ # CONFIG_DEFAULT_CFQ is not set
+-CONFIG_DEFAULT_DEADLINE=y
++# CONFIG_DEFAULT_DEADLINE  is not set
+ # CONFIG_DEFAULT_FIOPS is not set
+ # CONFIG_DEFAULT_NOOP is not set
+-# CONFIG_DEFAULT_ROW is not set
++CONFIG_DEFAULT_ROW=y
+ # CONFIG_DEFAULT_SIO is not set
+ # CONFIG_DEFAULT_SIOPLUS is not set
+ # CONFIG_DEFAULT_VR is not set
+@@ -468,10 +468,10 @@ CONFIG_MSM_RMT_STORAGE_CLIENT=y
+ CONFIG_MSM_DALRPC=y
+ CONFIG_MSM_DALRPC_TEST=m
+ # CONFIG_MSM_CPU_FREQ_SET_MIN_MAX is not set
+-CONFIG_CHIL360_OC=y
+-# CONFIG_CHIL360_RAM_STOCK is not set
++# CONFIG_CHIL360_OC  is not set
++CONFIG_CHIL360_RAM_STOCK=y
+ # CONFIG_CHIL360_RAM_MEDIUM is not set
+-CONFIG_CHIL360_RAM_HIGH=y
++# CONFIG_CHIL360_RAM_HIGH  is not set
+ # CONFIG_CHIL360_RAM_EXTRA_HIGH is not set
+ # CONFIG_MSM_AVS_HW is not set
+ # CONFIG_MSM_HW3D is not set
+-- 
+1.9.1
+

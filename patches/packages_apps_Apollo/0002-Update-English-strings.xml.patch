@@ -1,0 +1,25 @@
+From 5f574640159ccc51aca27692921263030c97ed38 Mon Sep 17 00:00:00 2001
+From: luca020400 <luca.stefani.ge1@gmail.com>
+Date: Fri, 25 Jul 2014 12:02:30 +0200
+Subject: [PATCH] Update strings.xml
+
+---
+ res/values/strings.xml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/res/values/strings.xml b/res/values/strings.xml
+index 095983c..d5443ec 100644
+--- a/res/values/strings.xml
++++ b/res/values/strings.xml
+@@ -15,7 +15,7 @@
+  -->
+ <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+ 
+-    <string name="app_name">Apollo</string>
++    <string name="app_name">Music</string>
+ 
+     <!-- Page titles -->
+     <string name="page_recent">Recent</string>
+-- 
+1.9.1
+

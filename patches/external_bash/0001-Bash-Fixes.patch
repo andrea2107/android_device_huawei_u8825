@@ -1,0 +1,41 @@
+From 62e9c597158097903f3c9538f415e2e59dcb8fdb Mon Sep 17 00:00:00 2001
+From: luca020400 <luca.stefani.ge1@gmail.com>
+Date: Sun, 28 Sep 2014 17:27:15 +0200
+Subject: [PATCH] Bash Fixes
+
+---
+ etc/bashrc | 2 +-
+ shell.c    | 4 +++-
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/etc/bashrc b/etc/bashrc
+index 0ca2cc1..c014f46 100644
+--- a/etc/bashrc
++++ b/etc/bashrc
+@@ -27,7 +27,7 @@ use_color=false
+ 
+ # set some environment variables
+ HOME=/sdcard
+-TERM=linux
++TERM=xterm
+ 
+ # enable colorful terminal
+ if [[ ${EUID} == 0 ]] ; then
+diff --git a/shell.c b/shell.c
+index 9e74f3b..42bd0f4 100644
+--- a/shell.c
++++ b/shell.c
+@@ -1654,7 +1654,9 @@ get_current_user_info ()
+ 	  current_user.shell = savestring ("/bin/sh");
+ 	  current_user.home_dir = savestring ("/");
+ 	}
+-      endpwent ();
++#if defined (HAVE_GETPWENT)
++       endpwent ();
++#endif
+     }
+ }
+ 
+-- 
+1.9.1
+

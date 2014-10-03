@@ -1,0 +1,25 @@
+From a43ac0c187c672558c27a6a3c49db7d1201c1a51 Mon Sep 17 00:00:00 2001
+From: Y300-0100 <bosko.brajovich@gmail.com>
+Date: Mon, 7 Jul 2014 20:34:19 +0200
+Subject: [PATCH] Update file_util_android.cc
+
+---
+ base/file_util_android.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/base/file_util_android.cc b/base/file_util_android.cc
+index e101e34..0877d16 100644
+--- a/base/file_util_android.cc
++++ b/base/file_util_android.cc
+@@ -28,7 +28,7 @@ mkstemps(char *path, int slen)
+ }
+ 
+ int
+-mkstemp(char *path)
++mkstemps(char *path)
+ {
+ 	int fd;
+ 
+-- 
+1.9.1
+

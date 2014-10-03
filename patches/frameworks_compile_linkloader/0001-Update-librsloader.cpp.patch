@@ -1,0 +1,74 @@
+From b7520e7978dc29c42d948e7b07503a4b731d7533 Mon Sep 17 00:00:00 2001
+From: Y300-0100 <bosko.brajovich@gmail.com>
+Date: Mon, 7 Jul 2014 18:01:57 +0200
+Subject: [PATCH] Update librsloader.cpp
+
+---
+ android/librsloader.cpp | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/android/librsloader.cpp b/android/librsloader.cpp
+index e0004f2..17f94de 100644
+--- a/android/librsloader.cpp
++++ b/android/librsloader.cpp
+@@ -42,12 +42,12 @@ extern "C" RSExecRef rsloaderCreateExec(unsigned char const *buf,
+                                         void *find_symbol_context) {
+   RSExecRef object = rsloaderLoadExecutable(buf, buf_size);
+   if (!object) {
+-    return NULL;
++    return 0;
+   }
+ 
+   if (!rsloaderRelocateExecutable(object, find_symbol, find_symbol_context)) {
+     rsloaderDisposeExec(object);
+-    return NULL;
++    return 0;
+   }
+ 
+   return object;
+@@ -60,7 +60,7 @@ extern "C" RSExecRef rsloaderLoadExecutable(unsigned char const *buf,
+   llvm::OwningPtr<ELFObject<32> > object(ELFObject<32>::read(AR));
+   if (!object) {
+     ALOGE("Unable to load the ELF object.");
+-    return NULL;
++    return 0;
+   }
+ 
+   return wrap(object.take());
+@@ -109,14 +109,14 @@ extern "C" void *rsloaderGetSymbolAddress(RSExecRef object_,
+     static_cast<ELFSectionSymTab<32> *>(object->getSectionByName(".symtab"));
+ 
+   if (!symtab) {
+-    return NULL;
++    return 0;
+   }
+ 
+   ELFSymbol<32> *symbol = symtab->getByName(name);
+ 
+   if (!symbol) {
+     ALOGV("Symbol not found: %s\n", name);
+-    return NULL;
++    return 0;
+   }
+ 
+   int machine = object->getHeader()->getMachine();
+@@ -131,14 +131,14 @@ extern "C" size_t rsloaderGetSymbolSize(RSExecRef object_, char const *name) {
+     static_cast<ELFSectionSymTab<32> *>(object->getSectionByName(".symtab"));
+ 
+   if (!symtab) {
+-    return NULL;
++    return 0;
+   }
+ 
+   ELFSymbol<32> *symbol = symtab->getByName(name);
+ 
+   if (!symbol) {
+     ALOGV("Symbol not found: %s\n", name);
+-    return NULL;
++    return 0;
+   }
+ 
+   return (size_t)symbol->getSize();
+-- 
+1.9.1
+

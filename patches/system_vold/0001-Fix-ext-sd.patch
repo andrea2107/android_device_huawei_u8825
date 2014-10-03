@@ -1,0 +1,25 @@
+From 3059e407869a6264b9cc16bd4ac8c1d1a941fb6a Mon Sep 17 00:00:00 2001
+From: luca020400 <luca.stefani.ge1@gmail.com>
+Date: Wed, 3 Sep 2014 21:37:42 +0200
+Subject: [PATCH] Fix ext sd
+
+---
+ Volume.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Volume.cpp b/Volume.cpp
+index c175f93..3db6c43 100644
+--- a/Volume.cpp
++++ b/Volume.cpp
+@@ -152,7 +152,7 @@ Volume::Volume(VolumeManager *vm, const char *label, const char *mount_point) {
+         char *first, *second = NULL;
+         const char *delim = ",";
+ 
+-        property_get("ro.vold.switchablepair", switchable, "");
++        property_get("persist.sys.vold.switchablepair", switchable, "");
+ 
+         if (!(first = strtok(switchable, delim))) {
+             SLOGE("Mount switch requested, but no switchable mountpoints found");
+-- 
+1.9.1
+

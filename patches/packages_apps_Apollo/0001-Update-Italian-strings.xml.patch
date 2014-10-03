@@ -1,0 +1,25 @@
+From 3f41c93f92f1762b8a9da6bcabd79f8f95f0e98a Mon Sep 17 00:00:00 2001
+From: luca020400 <luca.stefani.ge1@gmail.com>
+Date: Fri, 25 Jul 2014 12:02:07 +0200
+Subject: [PATCH] Update strings.xml
+
+---
+ res/values-it/strings.xml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/res/values-it/strings.xml b/res/values-it/strings.xml
+index 9b7173a..11c2e8f 100644
+--- a/res/values-it/strings.xml
++++ b/res/values-it/strings.xml
+@@ -14,7 +14,7 @@
+      limitations under the License.
+  -->
+ <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+-    <string name="app_name">Apollo</string>
++    <string name="app_name">Musica</string>
+     <string name="page_recent">Recenti</string>
+     <string name="page_artists">Artisti</string>
+     <string name="page_albums">Album</string>
+-- 
+1.9.1
+

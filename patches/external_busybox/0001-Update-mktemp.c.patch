@@ -1,0 +1,25 @@
+From d1e74d9ea128380039816b1b494bd3d7b7bf75cc Mon Sep 17 00:00:00 2001
+From: Y300-0100 <bosko.brajovich@gmail.com>
+Date: Sun, 6 Jul 2014 00:29:32 +0200
+Subject: [PATCH] Update mktemp.c
+
+---
+ debianutils/mktemp.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/debianutils/mktemp.c b/debianutils/mktemp.c
+index 983d7a2..92b8790 100644
+--- a/debianutils/mktemp.c
++++ b/debianutils/mktemp.c
+@@ -93,7 +93,7 @@ int mktemp_main(int argc UNUSED_PARAM, char **argv)
+ 		chp = concat_path_file(path, chp);
+ 
+ 	if (opts & OPT_u) {
+-		chp = mktemp(chp);
++		chp = mkstemp(chp);
+ 		if (chp[0] == '\0')
+ 			goto error;
+ 	} else if (opts & OPT_d) {
+-- 
+1.9.1
+
