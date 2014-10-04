@@ -60,32 +60,13 @@ dev.pm.dyn_sample_period=700000
 ro.vendor.extension_library=/system/lib/libqc-opt.so
 
 # Telephony
-persist.rild.nitz_plmn=
-persist.rild.nitz_long_ons_0=
-persist.rild.nitz_long_ons_1=
-persist.rild.nitz_long_ons_2=
-persist.rild.nitz_long_ons_3=
-persist.rild.nitz_short_ons_0=
-persist.rild.nitz_short_ons_1=
-persist.rild.nitz_short_ons_2=
-persist.rild.nitz_short_ons_3=
-ro.config.ehrpd=true
-ro.use_data_netmgrd=true
-ro.multi.rild=false
-ro.dual.sim.phone=false
-persist.dsds.enabled=false
-ro.config.hw_showSimName=true
-ro.config.hw_pukunlock_cfmpin=true
-DEVICE_PROVISIONED=1
 rild.libargs=-d /dev/smd0
 rild.libpath=/system/lib/libril-qc-1.so
 ril.subscription.types=NV,RUIM
-ro.telephony.call_ring.delay=100
 ro.telephony.call_ring.multiple=false
-ro.telephony.ril_class=HuaweiRIL2
+ro.telephony.ril_class=HuaweiQualcommRIL
 ro.telephony.ril.v3=qcomdsds,skippinpukcount
 gsm.version.baseband=1040
-ro.ril.transmitpower=true
 
 # USB
 persist.sys.usb.config=mtp,adb
