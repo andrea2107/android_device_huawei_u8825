@@ -1,0 +1,36 @@
+From e79607bd5e0f298bf4e6506a8230eda399334702 Mon Sep 17 00:00:00 2001
+From: luca020400 <luca.stefani.ge1@gmail.com>
+Date: Sun, 5 Oct 2014 17:55:41 +0200
+Subject: [PATCH 3/3] swipe to switch between notifications and QS
+
+---
+ .../com/android/systemui/statusbar/phone/NotificationPanelView.java | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
+
+diff --git a/packages/SystemUI/src/com/android/systemui/statusbar/phone/NotificationPanelView.java b/packages/SystemUI/src/com/android/systemui/statusbar/phone/NotificationPanelView.java
+index dc48647..4d8230f 100644
+--- a/packages/SystemUI/src/com/android/systemui/statusbar/phone/NotificationPanelView.java
++++ b/packages/SystemUI/src/com/android/systemui/statusbar/phone/NotificationPanelView.java
+@@ -39,7 +39,7 @@ public class NotificationPanelView extends PanelView {
+     private static final float STATUS_BAR_SETTINGS_FLIP_PERCENTAGE_LEFT = 0.85f;
+     private static final float STATUS_BAR_SWIPE_TRIGGER_PERCENTAGE = 0.05f;
+     private static final float STATUS_BAR_SWIPE_VERTICAL_MAX_PERCENTAGE = 0.025f;
+-    private static final float STATUS_BAR_SWIPE_MOVE_PERCENTAGE = 0.2f;
++    private static final float STATUS_BAR_SWIPE_MOVE_PERCENTAGE = 0.3f;
+ 
+     Drawable mHandleBar;
+     int mHandleBarHeight;
+@@ -175,9 +175,7 @@ public class NotificationPanelView extends PanelView {
+                         break;
+                     mGestureStartX = event.getX(0);
+                     mGestureStartY = event.getY(0);
+-                    mTrackingSwipe = isFullyExpanded() &&
+-                        // Pointer is at the handle portion of the view?
+-                        mGestureStartY > getHeight() - mHandleBarHeight - getPaddingBottom();
++                    mTrackingSwipe = isFullyExpanded();
+                     mOkToFlip = getExpandedHeight() == 0;
+                     if(mToggleStyle != 0) {
+                         // don't allow settings panel with non-tile toggles
+-- 
+1.9.1
+

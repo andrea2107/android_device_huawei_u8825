@@ -1,0 +1,25 @@
+From b33963c7a95def38f219dca134d3c39f3af9e34c Mon Sep 17 00:00:00 2001
+From: luca020400 <luca.stefani.ge1@gmail.com>
+Date: Sun, 5 Oct 2014 17:53:00 +0200
+Subject: [PATCH 2/3] Fix no network bug
+
+---
+ .../src/com/android/systemui/statusbar/policy/NetworkController.java    | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/packages/SystemUI/src/com/android/systemui/statusbar/policy/NetworkController.java b/packages/SystemUI/src/com/android/systemui/statusbar/policy/NetworkController.java
+index 1a4932d..14ddd31 100644
+--- a/packages/SystemUI/src/com/android/systemui/statusbar/policy/NetworkController.java
++++ b/packages/SystemUI/src/com/android/systemui/statusbar/policy/NetworkController.java
+@@ -1045,6 +1045,8 @@ public class NetworkController extends BroadcastReceiver {
+                     // Tablets, basically
+                     mobileLabel = "";
+                 }
++            } else if (hasService() || emergencyOnly) {
++                    mobileLabel = mNetworkName;
+             } else {
+                 mobileLabel
+                     = context.getString(R.string.status_bar_settings_signal_meter_disconnected);
+-- 
+1.9.1
+

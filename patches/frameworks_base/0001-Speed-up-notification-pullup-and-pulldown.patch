@@ -1,0 +1,40 @@
+From 38e704a0f8a78660d62c722858c5723878a07d69 Mon Sep 17 00:00:00 2001
+From: luca020400 <luca.stefani.ge1@gmail.com>
+Date: Sun, 5 Oct 2014 17:50:53 +0200
+Subject: [PATCH 1/3] Speed up notification pullup and pulldown
+
+---
+ packages/SystemUI/res/values/dimens.xml | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/packages/SystemUI/res/values/dimens.xml b/packages/SystemUI/res/values/dimens.xml
+index 5322058..b3dab66 100755
+--- a/packages/SystemUI/res/values/dimens.xml
++++ b/packages/SystemUI/res/values/dimens.xml
+@@ -99,9 +99,9 @@
+ 
+     <!-- Notification drawer tuning parameters (phone UI) -->
+     <!-- Initial velocity of the shade when expanding on its own -->
+-    <dimen name="self_expand_velocity">3000dp</dimen>
++    <dimen name="self_expand_velocity">6000dp</dimen>
+     <!-- Initial velocity of the shade when collapsing on its own -->
+-    <dimen name="self_collapse_velocity">3000dp</dimen>
++    <dimen name="self_collapse_velocity">6000dp</dimen>
+     <!-- Minimum final velocity of gestures interpreted as expand requests -->
+     <dimen name="fling_expand_min_velocity">100dp</dimen>
+     <!-- Minimum final velocity of gestures interpreted as collapse requests -->
+@@ -121,9 +121,9 @@
+     <item type="dimen" name="expand_min_display_fraction">50%</item>
+ 
+     <!-- Initial acceleration of an expand animation after fling -->
+-    <dimen name="expand_accel">2500dp</dimen>
++    <dimen name="expand_accel">6000dp</dimen>
+     <!-- Initial acceleration of an collapse animation after fling -->
+-    <dimen name="collapse_accel">2500dp</dimen>
++    <dimen name="collapse_accel">6000dp</dimen>
+ 
+     <!-- The padding on the global screenshot background image -->
+     <dimen name="global_screenshot_bg_padding">20dp</dimen>
+-- 
+1.9.1
+
